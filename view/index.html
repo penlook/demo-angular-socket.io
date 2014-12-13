@@ -1,0 +1,33 @@
+<!DOCTYPE>
+<html ng-app="chat">
+	<head>
+		<title>Socket.io - Chat</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/bootstrap-theme.css">
+		<link rel="stylesheet" href="css/core.css">
+	</head>
+	<body>
+		<div class="app-standard center-screen">
+			<div class="main-content" ng-controller="chatController as chatCtrl">
+				<div class="panel-post-status">
+					<post-comment 
+						ng-repeat="message in chatCtrl.messages" 
+							who="{{message.who}}" 
+							message="{{message.message}}" 
+							date="{{message.date | date: 'MM/dd/yyyy hh:mm:ss'}}">
+					</post-comment>
+				</div>
+				<div class="panel-post-input">
+					<input type="text" class="form-control" ng-model="chatCtrl.PostContent" placeholder="Write a comment" ng-enter="chatCtrl.submit()">
+				</div>
+			</div>
+		</div>
+
+		<script src="js/jquery.js"></script>
+		<script src="js/angular.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<script src="socket.io/socket.io.js"></script>
+		<script src="js/chat.js"></script>
+	</body>
+</html>

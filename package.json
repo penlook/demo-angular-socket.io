@@ -1,0 +1,9 @@
+{
+  "name": "Demo",
+  "author": "Nam Vo Hoai <namvh@penlook.com>",
+  "private": true,
+  "dependencies": {
+    "express": "~4.2.0",
+	"socket.io": ""
+  }
+}
